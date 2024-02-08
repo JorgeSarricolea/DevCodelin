@@ -1,16 +1,58 @@
 ---
-export let title = "DevGenie Studio";
 ---
 
-<header class="bg-">
-  <h1 class="text-white text-3xl">{title}</h1>
-  <nav class="mt-4">
-    <ul class="flex list-none">
-      <li class="mr-4"><a href="/" class="text-">Inicio</a></li>
-      <li class="mr-4"><a href="#services" class="text-white">Servicios</a></li>
-      <li class="mr-4"><a href="#us" class="text-white">Nosotros</a></li>
-      <li><a href="#contact" class="text-white">Contacto</a></li>
+<header class="bg-secondary bg-opacity-50 flex justify-between items-center py-4 backdrop-blur">
+  <h1 class="text-white text-4xl">
+    <span class="text-primary font-bold">DevGenie</span> Studio
+  </h1>
+  <nav class="bg-primary bg-opacity-20 rounded-3xl px-16 py-8">
+    <ul class="text-primary text-2xl uppercase flex list-none items-center gap-10">
+      <li class="hover:text-primary hover:font-bold">
+        <a href="/">Inicio</a>
+      </li>
+      <li class="hover:text-primary hover:font-bold">
+        <a href="#services">Servicios</a>
+      </li>
+      <li class="hover:text-primary hover:font-bold">
+        <a href="#us">Nosotros</a>
+      </li>
+      <li class="hover:text-primary hover:font-bold">
+        <a href="#contact">Contacto</a>
+      </li>
     </ul>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    let lastScrollTop = 0;
+    const header = document.querySelector("header");
+
+    // Styles
+    header.style.position = 'fixed';
+    header.style.top = '0';
+    header.style.width = '80%';
+    header.style.zIndex = '1000';
+    header.style.transition = 'transform 0.3s, opacity 0.3s';
+
+    window.addEventListener("scroll", function() {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (currentScroll > lastScrollTop) {
+        // If user scroll down, it hides the header
+        header.style.transform = 'translateY(-100%)';
+        header.style.opacity = '0';
+      } else {
+        // If user scroll up or are at the top, it shows the header
+        header.style.transform = 'translateY(0)';
+        header.style.opacity = '1';
+      }
+
+      // Update last scroll position for next time
+      lastScrollTop = currentScroll;
+    });
+  });
+</script>
+
+
 

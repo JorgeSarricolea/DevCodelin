@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js}"],
+  content: ["./src/**/*.{astro,js}"],
   theme: {
     extend: {
       colors: {
-        primaryText: "#0C1620", // Color para la fuente
-        primaryBackground: "#0C1620", // Color para el fondo principal
-        primary: "#ff7e67",
-        secondary: "#6dd5ed",
+        primaryBackground: "#0C1620",
+        primary: "#9ECDEF",
+        secondary: "#0C1620",
+        white: "#F0F0F0",
       },
     },
   },
