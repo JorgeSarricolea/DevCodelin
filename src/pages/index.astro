@@ -1,6 +1,6 @@
 ---
-import Header from '@components/header.astro'
-import Hero from '@components/hero.astro'
+import Header from '@components/Header.astro'
+import Hero from '@components/Hero.astro'
 ---
 
 <html lang="en">
@@ -10,15 +10,14 @@ import Hero from '@components/hero.astro'
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>DevGenie Studio</title>
-
 		<!-- Incluye Typed.js desde el CDN -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 	</head>
 	<body class="bg-secondary w-4/5 m-auto">
 		<Header />
 		<main class="mt-32 text-white space-y-10">
-			<Hero />
 			<section id="home">
+				<Hero />
 			</section>
 			<section id="services"></section>
 			<section id="us"></section>
