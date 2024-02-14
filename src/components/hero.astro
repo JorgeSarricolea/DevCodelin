@@ -1,0 +1,37 @@
+<section class="relative space-y-10">
+  <div class="flex justify-between items-center">
+    <div class="w-full relative">
+      <img class="h-36 w-full opacity-70 object-cover rounded-3xl" src="/public/img/banner.webp" alt="" class="w-full">
+      <div class="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center">
+        <h1 id="typedText" class="text-6xl uppercase font-bold mb-4 text-shadow-lightBlue h-12"></h1>
+        <a href="" class="cursor-pointer text-2xl bg-primary text-primaryBackground px-6 py-2 mt-8 rounded-2xl hover:bg-secondary hover:text-primary transition-colors duration-300 hover:shadow-lightBlue">
+          ¡Cotiza ya!
+        </a>
+      </div>
+      <main class="min-h-72 max-h-72 border-secondary border-8 absolute left-0 bg-white text-secondary py-14 px-16 rounded-3xl w-3/5">
+        <p class="text-3xl font-semibold uppercase mb-4 z-10">diseño y desarrollo web</p>
+        <p class="text-2xl z-10">Nuestros expertos en desarrollo web se especializan en productos de alto impacto. Desde landing pages cautivadoras hasta e-commerce robustos, dashboards intuitivos y sistemas de gestión eficientes.</p>
+      </main>
+      <!-- Carousel -->
+      <main class="min-h-72 max-h-72 border-secondary border-8 absolute right-0 bg-white text-secondary py-14 px-16 rounded-3xl w-2/5">
+      </main>
+    </div>
+  </div>
+</section>
+
+<!-- Typed.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Typed new instance
+    let typingEffect = new Typed("#typedText", {
+      strings: ["¡tu éxito digital, nuestra pasión!", "potencia tu negocio", "desarrollo web", "diseño intuitivo"],
+      loop: true,
+      typeSpeed: 30,
+      backSpeed: 30,
+      backDelay: 2000,
+      showCursor: false,
+    });
+  });
+</script>
