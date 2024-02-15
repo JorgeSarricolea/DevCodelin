@@ -2,54 +2,68 @@
 import slides from '@js/slidesObject.js';
 ---
 
-<div class="relative overflow-hidden w-full" id="slider-container">
-  <div id="slider" class="whitespace-nowrap transition-all ease-linear">
-    {slides.map((slide) => (
-      <div class="inline-block w-full snap-start p-4">
-        <div class="bg-white rounded-lg shadow p-5">
-          <h3 class="text-lg font-bold">{slide.title}</h3>
-          <p>{slide.description}</p>
-        </div>
-      </div>
-    ))}
+<div id="indicators-carousel" class="relative w-full" data-carousel="static">
+  <!-- Carousel wrapper -->
+  <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <!-- Carousel Items -->
+      {slides.map((slide, index) => (
+          <div class={`hidden duration-700 ease-in-out ${index === 0 ? 'block' : ''}`} data-carousel-item={index === 0 ? 'active' : ''}>
+            <i class={`${slide.icon} text-primaryBackground`}></i>
+            <h1>{slide.title}</h1>
+            <h2>{slide.description}</h2>
+          </div>
+      ))}
   </div>
-  <div class="absolute bottom-0 left-0 right-0 flex justify-center p-4">
-    {slides.map((_, index) => (
-      <span class="mx-1 h-2 w-2 bg-gray-300 rounded-full inline-block" data-indicator={index}></span>
-    ))}
+  <!-- Slider indicators -->
+  <div class="absolute bg-grey z-30 flex -translate-x-1/2 space-x-3 rtl:space-x-reverse bottom-5 left-1/2">
+      {slides.map((_, index) => (
+          <button type="button" class={`w-3 h-3 rounded-full bg-grey ${index === 0 ? 'bg-grey' : 'bg-grey'}`} aria-current={index === 0} aria-label={`Slide ${index + 1}`} data-carousel-slide-to={index}></button>
+      ))}
   </div>
+  <!-- Slider controls -->
+  <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+      <!-- Previous button icon -->
+  </button>
+  <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+      <!-- Next button icon -->
+  </button>
 </div>
-
-<script id="slides-data" type="application/json">
-  {JSON.stringify(slides)}
-</script>
 
 <script type="module">
   window.addEventListener('load', () => {
-    const slider = document.getElementById('slider');
-    const slidesData = JSON.parse(document.getElementById('slides-data').textContent);
-    let currentIndex = 0;
-    const slidesCount = slidesData.length;
-    const interval = 2000; // 2 segundos por slide
-    let slideWidth = document.querySelector('#slider > div').offsetWidth;
+      const carousel = document.getElementById('indicators-carousel');
+      const slides = Array.from(carousel.querySelectorAll('[data-carousel-item]'));
+      const indicators = Array.from(carousel.querySelectorAll('[data-carousel-slide-to]'));
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      let currentIndex = 0;
+      const slidesCount = slides.length;
+      const interval = 2000; // 2 segundos por slide
 
-    const indicators = document.querySelectorAll('[data-indicator]');
-    indicators[currentIndex].classList.add('bg-gray-800');
+      function updateCarousel() {
+          slides.forEach((slide, index) => {
+              slide.classList.toggle('hidden', index !== currentIndex);
+          });
 
-    function updateSlider() {
-      const offset = currentIndex * slideWidth;
-      slider.style.transform = `translateX(-${offset}px)`;
+          indicators.forEach((indicator, index) => {
+              indicator.classList.toggle('bg-gray', index !== currentIndex);
+              indicator.classList.toggle('bg-secondary', index === currentIndex);
+          });
+      }
 
-      indicators.forEach((indicator, index) => {
-        indicator.classList.toggle('bg-gray-800', index === currentIndex);
-      });
-    }
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % slidesCount;
+          updateCarousel();
+      }
 
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slidesCount;
-      updateSlider();
-    }, interval);
+      function prevSlide() {
+          currentIndex = (currentIndex - 1 + slidesCount) % slidesCount;
+          updateCarousel();
+      }
+
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      setInterval(nextSlide, interval);
   });
 </script>
-
-
