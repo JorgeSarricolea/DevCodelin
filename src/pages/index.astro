@@ -1,6 +1,7 @@
 ---
 import Header from '@components/Header.astro'
 import Hero from '@components/Hero.astro'
+import Reasons from '@components/Reasons.astro'
 ---
 
 <html lang="en">
@@ -19,11 +20,14 @@ import Hero from '@components/Hero.astro'
     />
 
 	</head>
-	<body class="bg-secondary w-4/5 m-auto">
+	<body class="bg-secondary w-3/5 m-auto">
 		<Header />
-		<main class="mt-32 text-white space-y-10">
+		<main class="mt-32 text-white">
 			<section id="home">
 				<Hero />
+			</section>
+			<section id="reasons" class="flex">
+				<Reasons />
 			</section>
 			<section id="services"></section>
 			<section id="us"></section>

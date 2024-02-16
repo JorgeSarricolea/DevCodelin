@@ -12,8 +12,8 @@ const slides = [
     icon: "fa-solid fa-mobile-screen-button",
   },
   {
-    id: "velocidad_carga",
-    title: "Velocidad de carga",
+    id: "carga_rapida",
+    title: "Carga rápida",
     description: "Determina la relación del usuario con el sitio web.",
     icon: "fa-solid fa-gauge-high",
   },

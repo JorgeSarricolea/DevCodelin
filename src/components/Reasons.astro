@@ -1,0 +1,15 @@
+---
+import reasons from '@js/reasonsObject.js';
+---
+
+<div>
+  {reasons.map((reason) => (
+    <div class={`flex ${reason.position === 'right' ? 'md:ml-auto' : ''}`}>
+      <div class="bg-blue-500 p-6 rounded-lg shadow-lg m-4">
+        {reason.image && <img src={reason.image} alt={reason.title} class="rounded-t-lg" />}
+        <h3 class="font-bold text-xl mb-2">{reason.title}</h3>
+        <p class="text-gray-700">{reason.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
