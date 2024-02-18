@@ -3,6 +3,7 @@ import Header from '@components/Header.astro'
 import Hero from '@components/Hero.astro'
 import Reasons from '@components/Reasons.astro'
 import Services from '@components/Services.astro'
+import About from '@components/About.astro'
 ---
 
 <html lang="en">
@@ -12,14 +13,13 @@ import Services from '@components/Services.astro'
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>DevGenie Studio</title>
-		<!-- Incluye Typed.js desde el CDN -->
+		<!-- CDN Typed.js -->
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
+		<!-- CDN Font Awesome -->
 		<link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
 	</head>
 	<body class="bg-secondary w-3/5 m-auto">
 		<Header />
@@ -33,7 +33,9 @@ import Services from '@components/Services.astro'
 			<section id="services">
 				<Services />
 			</section>
-			<section id="us"></section>
+			<section id="about">
+				<About />
+			</section>
 			<section id="contact"></section>
 		</main>
 		</div>
