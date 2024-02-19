@@ -8,6 +8,7 @@ module.exports = {
         secondary: "#0C1620",
         tertiary: "#2A3B4A",
         hover: "#86AAC4",
+        focus: "#9ECDEF",
       },
       spacing: {
         36: "36rem",

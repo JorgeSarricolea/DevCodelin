@@ -1,0 +1,143 @@
+<h1 class="text-5xl font-bold text-center my-20">Contáctanos</h1>
+<div class="w-full mx-auto text-secondary bg-white rounded-2xl p-16">
+  <h2 class="text-2xl font-bold text-center mb-12">¡Cuéntanos sobre tu proyecto para trabajar en equipo!</h2>
+  <form id="contactForm">
+      <!-- Name and Last Name -->
+      <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+              <input type="text" id="name" name="name" placeholder="Nombre*" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+          </div>
+          <div>
+              <input type="text" id="lastname" name="lastname" placeholder="Apellido*" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+          </div>
+      </div>
+
+      <!-- Email and Phone Number -->
+      <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+              <input type="email" id="email" name="email" placeholder="Correo electrónico*" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+          </div>
+          <div>
+              <input type="tel" id="phone" name="phone" placeholder="Teléfono*" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+          </div>
+      </div>
+
+      <!-- Company y Industry -->
+      <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+              <input type="text" id="company" name="company" placeholder="Empresa*" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+          </div>
+          <div>
+              <select id="industry" name="industry" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+                <option value="" disabled selected>Industria*</option>
+                <option value="Tecnología de la Información">Tecnología de la Información</option>
+                <option value="Salud y Farmacéutica">Salud y Farmacéutica</option>
+                <option value="Manufactura">Manufactura</option>
+                <option value="Finanzas y Banca">Finanzas y Banca</option>
+                <option value="Educación">Educación</option>
+                <option value="Energía y Servicios Públicos">Energía y Servicios Públicos</option>
+                <option value="Alimentos y Bebidas">Alimentos y Bebidas</option>
+                <option value="Automotriz">Automotriz</option>
+                <option value="Bienes Raíces">Bienes Raíces</option>
+                <option value="Medios de Comunicación y Entretenimiento">Medios de Comunicación y Entretenimiento</option>
+                <option value="Turismo y Hospitalidad">Turismo y Hospitalidad</option>
+                <option value="Transporte y Logística">Transporte y Logística</option>
+                <option value="Retail y Comercio">Retail y Comercio</option>
+                <option value="Servicios Profesionales">Servicios Profesionales</option>
+                <option value="Construcción">Construcción</option>
+                <option value="Agricultura">Agricultura</option>
+                <option value="Moda y Textiles">Moda y Textiles</option>
+              </select>
+          </div>
+      </div>
+
+      <!-- Budget and Realization Time -->
+      <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+              <input type="text" id="budget" name="budget" placeholder="Presupuesto (MXN)*" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+          </div>
+          <div>
+              <select id="timeframe" name="timeframe" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required>
+                  <option value="">Tiempo de realización*</option>
+                  <option value="1 month">De inmediato (1 mes)</option>
+                  <option value="3-6 months">De 3 a 6 meses</option>
+                  <option value="6-12 months">De 6 a 12 meses</option>
+                  <option value="+12 months">Más de 12 meses</option>
+              </select>
+          </div>
+      </div>
+
+      <!-- Message -->
+      <div class="mb-4">
+          <textarea id="mensaje" name="message" placeholder="Cuéntanos sobre tu proyecto*" rows="4" class="w-full px-3 py-2 border-2 rounded-lg focus:outline-none focus:border-primary" required></textarea>
+      </div>
+
+      <!-- Terms and Conditions -->
+      <div class="mb-4">
+          <label class="flex items-center">
+              <input type="checkbox" id="terms" name="terms" class="form-checkbox" required>
+              <p class="ml-2">He leído y acepto los <a href="/terms" class="underline">Términos & Condiciones</a> de Dev
+                Geine Studio.</p>
+          </label>
+      </div>
+
+      <!-- Submit Btn -->
+      <button type="button" id="submitButton" class="w-full cursor-pointer text-2xl bg-primary text-secondary px-6 py-2 mt-8 rounded-2xl hover:bg-secondary hover:text-primary transition-colors duration-300 hover:shadow-lightBlue">Enviar</button>
+  </form>
+</div>
+
+<script>
+  document.getElementById('submitButton').addEventListener('click', function() {
+    let form = document.getElementById('contactForm');
+    if (form instanceof HTMLFormElement && form.checkValidity()) {
+      let formData = new FormData(form);
+      let body = '';
+
+      // Go through all the fields of the form
+      formData.forEach(function(value, key) {
+        // Add the field name and its value to the message body
+        body += key + ': ' + value + '\n';
+      });
+
+      // Set the email subject
+      let companyName = formData.get('company');
+      let subject = 'Cotización de ' + companyName;
+
+      // Object with the form data to send
+      let dataToSend = {
+        body: body,
+        subject: subject
+      };
+
+      // Make the request to send the form
+      fetch('https://formsubmit.co/ajax/jjorgesarricolea18@gmail.com', {
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dataToSend)
+      })
+      .then(response => response.json())
+      .then(data => {
+          console.log(data);
+          alert('¡Cotización enviada con éxito!');
+      })
+      .catch(error => {
+          console.error('Error:', error);
+      });
+    } else {
+      alert('Por favor, llene todos los campos requeridos.');
+    }
+  });
+
+  // Add an event listener for the change in the checkbox
+  document.getElementById('terms').addEventListener('change', function() {
+    // Get checkbox status
+    let termsChecked = (document.getElementById('terms') as HTMLInputElement).checked;
+    // Enable or disable the submit button depending on the checkbox status
+    (document.getElementById('submitButton') as HTMLButtonElement).disabled = !termsChecked;
+  });
+
+</script>
+
+
