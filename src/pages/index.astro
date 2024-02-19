@@ -7,7 +7,7 @@ import About from '@components/About.astro'
 import Contact from '@components/Contact.astro'
 ---
 
-<html lang="en">
+<html lang="es" class="">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -22,13 +22,13 @@ import Contact from '@components/Contact.astro'
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
 	</head>
-	<body class="bg-secondary w-3/5 m-auto">
+	<body class="bg-secondary lg:w-3/5 w-10/12 m-auto">
 		<Header />
-		<main class="mt-32 text-white">
+		<main class="mt-32 text-white w-full">
 			<section id="home">
 				<Hero />
 			</section>
-			<section id="reasons" class="flex">
+			<section id="reasons">
 				<Reasons />
 			</section>
 			<section id="services">
