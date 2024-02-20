@@ -24,7 +24,7 @@ import reasons from '@js/reasonsObject.js';
           const animationClass = direction === 'left' ? 'animate-slideInLeft' : 'animate-slideInRight';
           entry.target.classList.add(animationClass);
           observer.unobserve(entry.target);
-        } 
+        }
       });
     }, { threshold: 0.1 });
 
