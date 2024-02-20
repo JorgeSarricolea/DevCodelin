@@ -13,6 +13,7 @@ module.exports = {
       spacing: {
         36: "36rem",
         cursor: "0.25rem",
+        verticalImg: "40rem",
       },
       textShadow: {
         lightBlue: "3px 3px 8px rgba(66, 135, 245, 1)",
