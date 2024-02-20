@@ -1,7 +1,7 @@
-<div class="w-full">
-  <h1 class="text-5xl font-bold text-center my-20">Conócenos</h1>
+<div class="w-full lg:max-w-full">
+  <h1 class="lg:text-5xl text-3xl font-bold text-center lg:my-20 my-8">Conócenos</h1>
   <div class="flex gap-8 justify-center items-center">
-    <p class="w-2/4">En DevGenie Studio, nuestra misión es impulsar el éxito de tu marca en el mundo digital. Creemos en la creación de productos web excepcionales que no solo cumplen con tus expectativas, sino que las superan. Nuestra visión es ser líderes en innovación digital, ofreciendo soluciones que transforman la experiencia en línea de nuestros clientes. Confía en nuestro equipo de expertos en desarrollo web para llevar tu visión a la realidad y alcanzar juntos nuevos horizontes digitales.</p>
+    <p class="lg:w-2/4">En DevGenie Studio, nuestra misión es impulsar el éxito de tu marca en el mundo digital. Creemos en la creación de productos web excepcionales que no solo cumplen con tus expectativas, sino que las superan. <br /><br /> <a id="mobile-peep" class="css-peeps"></a> <br /> Nuestra visión es ser líderes en innovación digital, ofreciendo soluciones que transforman la experiencia en línea de nuestros clientes. Confía en nuestro equipo de expertos en desarrollo web para llevar tu visión a la realidad y alcanzar juntos nuevos horizontes digitales.</p>
     <a class="css-peeps"></a>
   </div>
 </div>
@@ -9,6 +9,10 @@
 <style>
   @import url(https://unpkg.com/css-peeps@1/css-peeps.css);
 
+  #mobile-peep {
+    opacity: 0;
+    display: none;
+  }
   a {
     --peep-head: pomp;
     --peep-face: smile-big;
@@ -28,4 +32,25 @@
     background: transparent;
     border-radius: 10px;
   }
+
+  @media screen and (max-width: 740px) {
+  #mobile-peep {
+    --peep-body-offset-x: 10px;
+
+    width: 166px;
+    height: 152px;
+    opacity: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  a {
+    opacity: 0;
+    display: none;
+  }
+}
+
 </style>
