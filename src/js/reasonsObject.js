@@ -4,7 +4,7 @@ const reasons = [
     title: "Empatía con tu proyecto",
     description:
       "Nos ajustamos a tu presupuesto y a las necesidades de tu negocio, con el objetivo de hacer crecer tu marca y ventas, encaminándolo al éxito.",
-    image: "../img/empathy.jpeg",
+    image: "../../public/img/empathy.jpeg",
     position: "left",
   },
   {
