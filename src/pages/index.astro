@@ -24,7 +24,7 @@ import Contact from '@components/Contact.astro'
 	</head>
 	<body class="bg-secondary lg:w-3/5 w-10/12 m-auto">
 		<Header />
-		<main class="mt-32 text-white w-full">
+		<main class="lg:mt-32 mt-24 text-white w-full">
 			<section id="home">
 				<Hero />
 			</section>
@@ -44,3 +44,9 @@ import Contact from '@components/Contact.astro'
 		</div>
 	</body>
 </html>
+
+<style>
+	.no-scroll {
+  overflow: hidden;
+}
+</style>
