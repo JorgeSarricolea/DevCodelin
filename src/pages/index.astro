@@ -7,13 +7,19 @@ import About from '@components/About.astro'
 import Contact from '@components/Contact.astro'
 ---
 
-<html lang="es" class="">
+<html lang="en" class="">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>CrafterSites Studio</title>
+		<!-- Meta Tags -->
+	  <meta property="og:type" content="website">
+		<meta property="og:url" content="https://devcodelin.com/">
+		<meta property="og:title" content="<DevCodelin /> La solución digital">
+		<meta property="og:description" content="Nuestros expertos en desarrollo web se especializan en productos de alto impacto. Desde landing pages cautivadoras hasta e-commerce robustos, dashboards intuitivos y sistemas de gestión eficientes.">
+		<meta property="og:image" content="https://devcodelin.com/banner.webp">
+		<title>DevCodelin</title>
 		<!-- CDN Font Awesome -->
 		<link
       rel="stylesheet"
