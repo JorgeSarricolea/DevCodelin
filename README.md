@@ -1,47 +1,11 @@
-# Astro Starter Kit: Minimal
+# [</> DevCodelin](https://devcodelin.com)
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## WEB DESIGN AND DEVELOPMENT
+Our web development experts specialize in high-impact products. From captivating landing pages to robust e-commerce, intuitive dashboards and efficient management systems.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## About us
+At **[DevCodelin](https://devcodelin.com)**, our mission is to drive your brand's success in the digital world. We believe in creating exceptional web products that not only meet your expectations, but exceed them.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Our vision is to be leaders in digital innovation, offering solutions that transform our customers' online experience. Trust our **team of web development experts** to bring your vision to reality and reach new digital horizons together.
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+User Interface development with Figma by [Jorge Sarricolea](https://jorgesarricolea.com), [click here to watch UI](https://www.figma.com/file/CO9QqTKx1VAsXDYaeC8pi0/DevCodelin?type=design&node-id=0%3A1&mode=design&t=6HDkKRX5yfxbugd3-1).
