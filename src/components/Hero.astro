@@ -1,50 +1,86 @@
 ---
-import Slider from "@components/Slider.astro"
+import Slider from "@components/Slider.astro";
 ---
 
 <!-- Banner -->
 <section class="relative">
   <div class="flex justify-between items-center">
     <div class="w-full relative">
-      <img class="lg:h-36 h-36 w-full opacity-70 object-cover rounded-3xl" src="../img/banner.webp" alt="" class="w-full">
-      <div class="absolute top-0 mt-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center">
-        <h1 id="typedText" class="lg:w-full text-white w-11/12 lg:text-6xl text-4xl text-center uppercase font-bold mb-4 text-shadow-lightBlue lg:h-12 h-32"></h1>
-        <a href="https://wa.me/5939381095593?text=Quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20para%20mi%20p%C3%A1gina%20web" class="cursor-pointer text-2xl bg-primary text-secondary px-6 py-2 lg:mt-8 rounded-2xl hover:bg-secondary hover:text-primary transition-colors duration-300 hover:shadow-lightBlue">
+      <img
+        class="lg:h-36 h-36 w-full opacity-70 object-cover rounded-3xl"
+        src="../img/banner.webp"
+        alt=""
+        class="w-full"
+      />
+      <div
+        class="absolute top-0 mt-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center"
+      >
+        <h1
+          id="typedText"
+          class="lg:w-full text-white w-11/12 lg:text-6xl text-4xl text-center uppercase font-bold mb-4 text-shadow-lightBlue lg:h-12 h-32"
+        >
+        </h1>
+        <a
+          href="https://wa.me/529999602054?text=Quiero%20saber%20m%C3%A1s%20informaci%C3%B3n%20para%20mi%20p%C3%A1gina%20web"
+          class="cursor-pointer text-2xl bg-primary text-secondary px-6 py-2 lg:mt-8 rounded-2xl hover:bg-secondary hover:text-primary transition-colors duration-300 hover:shadow-lightBlue"
+        >
           ¡Cotiza ya!
         </a>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- Main container -->
-<div class="lg:max-h-72 my-8 gap-8 lg:flex">
-  <!-- Main info -->
-  <section class="bg-white text-secondary lg:py-14 lg:px-16 p-8 rounded-3xl lg:w-3/5 ms:w-full flex items-center justify-center">
-    <div>
-      <p class="text-3xl font-semibold uppercase mb-4">diseño y desarrollo web</p>
-      <p class="text-1xl">Nuestros expertos en desarrollo web se especializan en productos de alto impacto. Desde landing pages cautivadoras hasta e-commerce robustos, dashboards intuitivos y sistemas de gestión eficientes.</p>
-    </div>
-  </section>
-  <!-- Slider -->
-  <section class= " bg-white text-secondary lg:py-14 lg:px-16 p-8 lg:mt-0 mt-8 rounded-3xl lg:w-2/5 ms:w-full">
-    <Slider />
-  </section>
-</div>
+  <!-- Main container -->
+  <div class="lg:max-h-72 my-8 gap-8 lg:flex">
+    <!-- Main info -->
+    <section
+      class="bg-white text-secondary lg:py-14 lg:px-16 p-8 rounded-3xl lg:w-3/5 ms:w-full flex items-center justify-center"
+    >
+      <div>
+        <p class="text-3xl font-semibold uppercase mb-4">
+          diseño y desarrollo web
+        </p>
+        <p class="text-1xl">
+          Nuestros expertos en desarrollo web se especializan en productos de
+          alto impacto. Desde landing pages cautivadoras hasta e-commerce
+          robustos, dashboards intuitivos y sistemas de gestión eficientes.
+        </p>
+      </div>
+    </section>
+    <!-- Slider -->
+    <section
+      class="bg-white text-secondary lg:py-14 lg:px-16 p-8 lg:mt-0 mt-8 rounded-3xl lg:w-2/5 ms:w-full"
+    >
+      <Slider />
+    </section>
+  </div>
 
-<!-- Typed.js CDN -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js" integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- Typed.js CDN -->
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"
+    integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
 
-<script>
-  import Typed from "typed.js";
-  document.addEventListener("DOMContentLoaded", function () {
-    // Typed new instance
-    let typingEffect = new Typed("#typedText", {
-      strings: ["¡tu éxito, nuestra pasión!", "potencia tu negocio", "desarrollo web", "diseño intuitivo"],
-      loop: true,
-      typeSpeed: 30,
-      backSpeed: 30,
-      backDelay: 2000,
-      showCursor: false,
+  <script>
+    import Typed from "typed.js";
+    document.addEventListener("DOMContentLoaded", function () {
+      // Typed new instance
+      let typingEffect = new Typed("#typedText", {
+        strings: [
+          "Creamos tu página web",
+          "La solución digital",
+          "¡tu éxito, nuestra pasión!",
+          "potencia tu negocio",
+          "desarrollo web",
+          "diseño intuitivo",
+        ],
+        loop: true,
+        typeSpeed: 30,
+        backSpeed: 30,
+        backDelay: 2000,
+        showCursor: false,
+      });
     });
-  });
-</script>
+  </script>
+</section>
